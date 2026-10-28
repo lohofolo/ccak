@@ -1,8 +1,7 @@
 {
   "name": "cca-website",
   "version": "1.0.0",
-  "description": "Reproduction officielle du site du Conseil du Coton et de l'Anacarde (CCA)",
-  "main": "server.js",
+  "description": "Site officiel du Conseil du Coton et de l'Anacarde (CCA)",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"

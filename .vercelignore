@@ -1,0 +1,3 @@
+# Ignorer le serveur local Node.js pour forcer Vercel à servir le site en 100% statique sur son Edge Network CDN
+server.js
+SECURITY_AUDIT.md
