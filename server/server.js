@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const zlib = require('zlib');
 
-const ROOT = path.resolve(__dirname);
+const ROOT = path.resolve(__dirname, '..');
 
 // Fichiers internes et configurations strictement interdits en accès public
 const FORBIDDEN_BASENAMES = new Set([
@@ -11,7 +11,9 @@ const FORBIDDEN_BASENAMES = new Set([
   'package.json',
   'package-lock.json',
   'README.md',
-  'SECURITY_AUDIT.md'
+  'SECURITY_AUDIT.md',
+  'vercel.json',
+  '.vercelignore'
 ]);
 
 const MIME_TYPES = {
@@ -94,8 +96,9 @@ const server = http.createServer((req, res) => {
 
   const isDotFile = segments.some(seg => seg.startsWith('.'));
   const isForbiddenInternal = FORBIDDEN_BASENAMES.has(baseName);
+  const isServerDir = segments.includes('server');
 
-  if (isDotFile || isForbiddenInternal) {
+  if (isDotFile || isForbiddenInternal || isServerDir) {
     res.writeHead(403, getSecurityHeaders('text/plain; charset=utf-8'));
     res.end('Accès interdit aux fichiers internes du serveur');
     return;

@@ -49,7 +49,9 @@ Cette reproduction intégrale, fidèle et modernisée a été conçue en rétro-
 ### Option 1 : Via le serveur Node.js inclus (Recommandé)
 Dans le terminal du projet :
 ```bash
-node server.js
+npm start
+# ou
+node server/server.js
 ```
 Puis ouvrez votre navigateur sur : **[http://localhost:3000](http://localhost:3000)**
 
@@ -73,7 +75,8 @@ CCA-WEBSITE/
 ├── contact.html                    # Formulaire & Annuaire des 12 délégations
 ├── connexion.html                  # Portail sécurisé des opérateurs agréés
 ├── 404.html                        # Page d'erreur 404 personnalisée
-├── server.js                       # Serveur local Node.js sécurisé
+├── server/
+│   └── server.js                   # Serveur local Node.js sécurisé
 ├── README.md                       # Documentation officielle du projet
 ├── sitemap.xml                     # Plan du site XML pour le référencement
 ├── robots.txt                      # Directives d'indexation des moteurs de recherche
