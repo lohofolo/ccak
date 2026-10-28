@@ -4,6 +4,54 @@
  */
 
 /* ==========================================================================
+   0. GESTION DU RECHARGEMENT (RETOUR AUTOMATIQUE À L'ACCUEIL LORS D'UN RELOAD)
+   ========================================================================== */
+(function handlePageReload() {
+  try {
+    let isReload = false;
+    const navEntries = window.performance && window.performance.getEntriesByType && window.performance.getEntriesByType('navigation');
+    if (navEntries && navEntries.length > 0) {
+      isReload = (navEntries[0].type === 'reload');
+    } else if (window.performance && window.performance.navigation) {
+      isReload = (window.performance.navigation.type === 1);
+    }
+
+    if (isReload) {
+      const path = window.location.pathname;
+      const isHome = path === '/' || path === '' || path.endsWith('/index.html') || path.endsWith('/index');
+
+      if (!isHome) {
+        // Redirection immédiate vers la page d'accueil si actualisation depuis une page secondaire
+        const targetHome = window.location.protocol === 'file:' ? 'index.html' : '/';
+        window.location.replace(targetHome);
+        return;
+      }
+
+      // Si sur l'accueil : retour en haut de page sans persistance du défilement
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+
+      if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);
+      }
+
+      window.addEventListener('pageshow', () => {
+        window.scrollTo(0, 0);
+      });
+      window.addEventListener('load', () => {
+        window.scrollTo(0, 0);
+      });
+    }
+  } catch (e) {
+    // Fallback silencieux
+  }
+})();
+
+/* ==========================================================================
    0. CONFIGURATION GLOBALE
    ========================================================================== */
 const CCA_CONFIG = {

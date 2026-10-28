@@ -23,6 +23,11 @@
   <!-- Favicon officiel -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
+  <!-- Retour automatique à l'accueil en haut de page lors d'une actualisation (Reload) -->
+  <script>
+    (function(){try{var r=false,n=window.performance&&window.performance.getEntriesByType&&window.performance.getEntriesByType('navigation');if(n&&n.length>0){r=(n[0].type==='reload');}else if(window.performance&&window.performance.navigation){r=(window.performance.navigation.type===1);}if(r){if('scrollRestoration'in history){history.scrollRestoration='manual';}window.scrollTo(0,0);if(window.location.hash){history.replaceState(null,null,window.location.pathname);}window.addEventListener('pageshow',function(){window.scrollTo(0,0);});window.addEventListener('load',function(){window.scrollTo(0,0);});}}catch(e){}})();
+  </script>
+
   <!-- Feuilles de style -->
   <link rel="stylesheet" href="css/style.css?v=2.2">
   <link rel="stylesheet" href="css/responsive.css?v=2.2">
