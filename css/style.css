@@ -2220,9 +2220,6 @@ textarea:focus-visible,
 .stat-box:nth-child(3) .stat-number {
   color: var(--cca-green);
 }
-.stat-icon[src*="donnee_static_orange"] {
-  filter: brightness(0) invert(1);
-}
 .stat-number {
   font-variant-numeric: tabular-nums;
 }
