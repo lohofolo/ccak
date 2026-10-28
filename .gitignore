@@ -1,0 +1,25 @@
+# Fichiers d'environnement et secrets
+.env
+.env.*
+*.env
+
+# Certificats et clés privées
+*.pem
+*.key
+*.cert
+*.crt
+
+# Fichiers temporaires, sauvegardes et logs
+*.bak
+*.old
+*.tmp
+*.dump
+*.sql
+*.log
+
+# Dossiers système et dépendances
+node_modules/
+.DS_Store
+cca_chunks/
+downloaded_cca/
+arborescence.txt

@@ -1,0 +1,18 @@
+{
+  "name": "cca-website",
+  "version": "1.0.0",
+  "description": "Reproduction officielle du site du Conseil du Coton et de l'Anacarde (CCA)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "cca",
+    "coton",
+    "anacarde",
+    "cote-divoire"
+  ],
+  "author": "",
+  "license": "ISC"
+}

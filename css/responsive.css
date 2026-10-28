@@ -1,0 +1,275 @@
+/* ==========================================================================
+   CONSEIL DU COTON ET DE L'ANACARDE (CCA) - ADAPTATION RESPONSIVE
+   ========================================================================== */
+
+/* Écrans larges et moyens (Laptops & Tablettes) */
+@media (max-width: 1200px) {
+  .nav-menu {
+    gap: 1rem;
+  }
+  .nav-link {
+    font-size: 0.875rem;
+  }
+  .about-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  body {
+    padding-top: 110px;
+  }
+
+  /* Hamburger & Navigation mobile */
+  .nav-menu, .navbar-actions .btn-contact, .navbar-actions .btn-portal {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-slider {
+    height: 480px;
+  }
+
+  .slide-title {
+    font-size: 1.85rem;
+  }
+
+  .slide-desc {
+    font-size: 1rem;
+  }
+
+  .slider-arrow {
+    display: none; /* Swipe & dots are used on touch screens */
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filieres-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #cca-map {
+    height: 380px;
+  }
+
+  .delegations-panel {
+    max-height: 300px;
+  }
+
+  .newsletter-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .newsletter-form {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* Mobiles (< 640px) */
+@media (max-width: 640px) {
+  body {
+    padding-top: 100px;
+  }
+
+  .topbar-lang {
+    font-size: 0.75rem;
+  }
+
+  .topbar-badge span {
+    display: none; /* Hide long text on tiny screens */
+  }
+
+  .navbar-logo {
+    height: 42px;
+  }
+
+  .flash-info-container {
+    height: 40px;
+  }
+
+  .flash-title-badge {
+    padding: 0 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .flash-socials {
+    display: none;
+  }
+
+  .hero-slider {
+    height: 420px;
+  }
+
+  .slide-overlay {
+    padding: 2rem 0;
+  }
+
+  .slide-title {
+    font-size: 1.45rem;
+  }
+
+  .slide-desc {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .slide-btn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .section-about, .section-news, .section-filieres, .section-map {
+    padding: 3rem 0;
+  }
+
+  .section-header, .news-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-title, .news-header h2 {
+    font-size: 1.65rem;
+  }
+
+  .about-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+  }
+
+  .whatsapp-link-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .modal-card {
+    padding: 1.25rem;
+    width: 95%;
+  }
+}
+
+/* ==========================================================================
+   AMÉLIORATIONS 2026 — mobile
+   ========================================================================== */
+@media (max-width: 992px) {
+  body {
+    padding-top: var(--header-h, 150px);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Les grilles écrites directement dans les pages (style="grid-template-columns…")
+     passent sur une colonne au lieu de déborder de l'écran */
+  [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  /* Grands encadrés : moins de marge intérieure sur petit écran */
+  [style*="padding: 3rem"] {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding-top: var(--header-h, 150px);
+  }
+
+  /* Chiffres clés en 2 × 2 au lieu de 4 cartes empilées */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+  .stat-box {
+    padding: 1.25rem 0.75rem;
+  }
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    margin-bottom: 0.75rem;
+  }
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  .stat-label {
+    font-size: 0.8125rem;
+    line-height: 1.35;
+  }
+  .section-stats {
+    padding: 2.5rem 0;
+  }
+
+  /* Le bouton du carrousel ne chevauche plus les puces */
+  .slide-overlay {
+    padding: 2rem 0 3.25rem;
+  }
+  .slider-dots {
+    bottom: 1rem;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .toast-container {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}

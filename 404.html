@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page introuvable - Conseil du Coton et de l'Anacarde</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#F77F00">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css?v=2.2">
+  <style>
+    body { padding-top: 0; }
+    .notfound {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--cca-bg-light) url('assets/images/pattern_about.webp') center/cover no-repeat;
+    }
+    .notfound-card { max-width: 520px; }
+    .notfound-logo { height: 64px; margin: 0 auto 2rem; }
+    .notfound-code {
+      font-size: clamp(4rem, 18vw, 7rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--cca-orange);
+      letter-spacing: -0.04em;
+    }
+    .notfound h1 { font-size: 1.5rem; color: var(--cca-brown); margin: 0.75rem 0; }
+    .notfound p { color: var(--cca-text-muted); margin-bottom: 2rem; }
+    .notfound-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <main class="notfound" id="contenu">
+    <div class="notfound-card">
+      <a href="index.html"><img src="assets/logo/cca-logo.webp" alt="Conseil du Coton et de l'Anacarde" class="notfound-logo"></a>
+      <div class="notfound-code">404</div>
+      <h1>Cette page est introuvable</h1>
+      <p>Le lien est peut-être erroné ou la page a été déplacée. Les rubriques principales restent accessibles depuis l'accueil.</p>
+      <div class="notfound-actions">
+        <a href="index.html" class="btn-contact">Retour à l'accueil</a>
+        <a href="contact.html" class="btn-portal">Nous contacter</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
